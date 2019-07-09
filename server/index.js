@@ -3,6 +3,11 @@ var csvtojson = require('csvtojson');
 
 var app = express();
 
+app.use('/api/*', function(req, res, next) {
+    console.log(req.baseUrl + ' ' + req.method);
+    next();
+});
+
 app.get('/api/list', function(req, res) {
     csvtojson().fromFile('./test_data/list.csv')
     .then(function(jsonObj) {
