@@ -39,4 +39,8 @@
 #endif
 }
 
+- (BOOL)shouldBridgeUseCustomJSC:(RCTBridge *)bridge {
+  return NO;
+}
+
 @end
